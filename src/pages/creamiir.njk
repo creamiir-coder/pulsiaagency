@@ -1,0 +1,182 @@
+---
+layout: layouts/base.njk
+title: Créamiir — Produits Éducatifs
+description: "Créamiir by PULSIA Agency — Produits éducatifs créatifs pour enfants. Pack رحلتي في رمضان, kit Ramadan 250 DH. Livraison au Maroc."
+permalink: /creamiir/
+---
+
+{% set produit = creamiir.produits[0] %}
+
+{% if produit and produit.active %}
+
+<div class="page-header page-header--cream">
+  <div class="page-header__inner container">
+    <span class="eyebrow">Créamiir by PULSIA Agency</span>
+    <h1>{{ produit.titre }}</h1>
+    <p>{{ produit.sous_titre }}</p>
+  </div>
+</div>
+
+<section class="creamiir-product">
+  <div class="container">
+    <div class="creamiir-product__grid">
+
+      {# Image #}
+      <div class="creamiir-image-hero fade-up">
+        <img src="{{ produit.image }}" alt="{{ produit.titre }}">
+        <div class="creamiir-badge">
+          {% if produit.en_stock %}
+          <span class="badge-stock">✅ En stock</span>
+          {% else %}
+          <span class="badge-stock badge-stock--out">❌ Rupture de stock</span>
+          {% endif %}
+        </div>
+      </div>
+
+      {# Info #}
+      <div class="creamiir-product__info fade-up">
+        <span class="eyebrow">Produit Éducatif</span>
+        <h2>{{ produit.titre }}</h2>
+        <div class="gold-line"></div>
+        <p>{{ produit.description_courte }}</p>
+        <p>{{ produit.description_longue }}</p>
+        <div class="creamiir-price">{{ produit.prix }} DH</div>
+        <p style="font-size:0.78rem;color:var(--grey-mid);margin-bottom:24px;">Livraison partout au Maroc · Paiement à la livraison (COD)</p>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://wa.me/{{ site.whatsapp }}?text=Je%20souhaite%20commander%20le%20Pack%20Creamiir%20250%20DH" target="_blank" rel="noopener" class="btn btn--gold">💬 Commander via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Contenu du pack #}
+<section class="creamiir-contents" style="background:var(--cream)">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Ce qui est inclus</span>
+      <h2>Contenu du pack</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="contents-grid">
+      {% for item in produit.contenu %}
+      <div class="content-item fade-up">
+        <div class="content-item__icon">{{ item.icone }}</div>
+        <div>
+          <strong>{{ item.nom }}</strong>
+          <p>{{ item.desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# Bénéfices #}
+<section class="creamiir-benefits">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Pourquoi ce pack</span>
+      <h2>Bénéfices éducatifs</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="benefits-grid">
+      {% for ben in produit.benefices %}
+      <div class="benefit-card fade-up">
+        <div class="benefit-card__icon">{{ ben.icone }}</div>
+        <h3>{{ ben.titre }}</h3>
+        <p>{{ ben.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# Témoignages #}
+{% if produit.temoignages and produit.temoignages.length > 0 %}
+<section style="background:var(--off-white);padding:80px 0;">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Avis clients</span>
+      <h2>Ce qu'elles en disent</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="temoignages-grid">
+      {% for temo in produit.temoignages %}
+      <div class="temo-card fade-up">
+        <div class="temo-card__stars">{% for i in range(temo.note) %}⭐{% endfor %}</div>
+        <p class="temo-card__text">"{{ temo.texte }}"</p>
+        <div class="temo-card__author">
+          <strong>{{ temo.nom }}</strong>
+          <span>{{ temo.ville }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# Formulaire de commande Créamiir #}
+<section style="padding:80px 0;">
+  <div class="container" style="max-width:600px;">
+    <div class="section-head fade-up" style="margin-bottom:32px;">
+      <span class="eyebrow">Commander</span>
+      <h2>Recevoir votre pack</h2>
+      <div class="gold-line"></div>
+      <p>Remplissez le formulaire ou contactez-nous directement sur WhatsApp. Paiement à la livraison (COD).</p>
+    </div>
+    <div class="form-card fade-up">
+      <form name="commande-creamiir" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="commande-creamiir">
+        <input type="hidden" name="produit" value="{{ produit.titre }}">
+        <input type="hidden" name="prix" value="{{ produit.prix }} DH">
+        <p style="display:none"><input name="bot-field"></p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cr-nom">Nom complet *</label>
+            <input type="text" id="cr-nom" name="nom" required placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="cr-tel">Téléphone *</label>
+            <input type="tel" id="cr-tel" name="telephone" required placeholder="+212 6XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cr-email">Email *</label>
+            <input type="email" id="cr-email" name="email" required placeholder="votre@email.com">
+          </div>
+          <div class="form-group">
+            <label for="cr-ville">Ville de livraison *</label>
+            <input type="text" id="cr-ville" name="ville" required placeholder="Casablanca">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cr-adresse">Adresse complète *</label>
+          <textarea id="cr-adresse" name="adresse" required style="min-height:80px" placeholder="Numéro, rue, quartier, ville…"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="cr-quantite">Quantité</label>
+          <select id="cr-quantite" name="quantite">
+            <option value="1">1 pack — {{ produit.prix }} DH</option>
+            <option value="2">2 packs — {{ produit.prix * 2 }} DH</option>
+            <option value="3">3 packs — {{ produit.prix * 3 }} DH</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn--gold form-submit" style="width:100%;justify-content:center;">Commander — Paiement à la livraison</button>
+        <p style="font-size:0.75rem;text-align:center;color:var(--grey-mid);margin-top:8px;">Livraison 3–5 jours · COD · Satisfaction garantie</p>
+      </form>
+      <div class="success-msg">🎉 Commande reçue ! Nous vous contactons dans les 24h pour confirmer la livraison. Merci !</div>
+    </div>
+  </div>
+</section>
+
+{% else %}
+<div style="padding:120px 24px;text-align:center;">
+  <h1>Aucun produit disponible</h1>
+  <p>Revenez bientôt — de nouveaux produits Créamiir arrivent !</p>
+  <a href="/" class="btn btn--gold" style="margin-top:24px;">Retour à l'accueil</a>
+</div>
+{% endif %}

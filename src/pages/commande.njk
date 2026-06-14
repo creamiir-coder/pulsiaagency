@@ -1,0 +1,197 @@
+---
+layout: layouts/base.njk
+title: Commander & Devis
+description: "Démarrez votre projet avec PULSIA Agency. Formulaire de commande et devis gratuit pour tous nos services."
+permalink: /commande/
+---
+
+<div class="page-header">
+  <div class="page-header__inner container">
+    <span class="eyebrow">Démarrer un projet</span>
+    <h1>Commander & Devis</h1>
+    <p>Remplissez le formulaire. Réponse sous 24h avec votre devis personnalisé gratuit.</p>
+  </div>
+</div>
+
+<section class="order-page">
+  <div class="order-page__inner container">
+
+    <div class="price-indicator" id="price-indicator">
+      <h4>💡 Tarif indicatif</h4>
+      <div class="price-range" id="price-range"></div>
+      <div class="price-note" id="price-note"></div>
+    </div>
+
+    <div class="form-card">
+      <h2 style="font-family:var(--font-display);font-size:2rem;margin-bottom:0.5rem;">Votre demande</h2>
+      <p style="font-size:0.9rem;color:var(--grey-mid);margin-bottom:2rem;">Tous les champs * sont obligatoires. Le prix affiché est indicatif, un devis précis sera établi selon votre projet.</p>
+
+      <form name="commande" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="commande">
+        <p style="display:none"><input name="bot-field"></p>
+
+        <div class="form-group">
+          <label for="order-service">Service souhaité *</label>
+          <select id="order-service" name="service" required>
+            <option value="">-- Sélectionnez un service --</option>
+            <optgroup label="🎨 Infographie & Impression">
+              {% for s in services.infographie | activeOnly %}
+              <option value="{{ s.id }}">{{ s.icone }} {{ s.titre }}</option>
+              {% endfor %}
+            </optgroup>
+            <optgroup label="📈 Digital Growth">
+              {% for s in services.digital | activeOnly %}
+              <option value="{{ s.id }}">{{ s.icone }} {{ s.titre }}</option>
+              {% endfor %}
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="order-subservice">Option / Formule</label>
+          <select id="order-subservice" name="sous_service" disabled>
+            <option value="">-- Sélectionnez d'abord un service --</option>
+          </select>
+        </div>
+
+        {# TOGGLE IMPRESSION #}
+        <div class="form-group">
+          <label>Souhaitez-vous une impression physique ?</label>
+          <p style="font-size:0.78rem;color:var(--grey-mid);margin-bottom:12px;font-weight:400;text-transform:none;letter-spacing:0;">Les frais d'impression sont toujours à la charge du client.</p>
+          <div class="print-toggle" id="print-toggle">
+            <button type="button" class="print-btn" id="print-btn-oui" data-value="oui">
+              <span class="print-btn__icon">🖨️</span>
+              <span class="print-btn__label">Oui, collaborer avec impression</span>
+              <span class="print-btn__sub">Nous coordonnons avec l'imprimeur</span>
+            </button>
+            <button type="button" class="print-btn print-btn--active" id="print-btn-non" data-value="non">
+              <span class="print-btn__icon">💻</span>
+              <span class="print-btn__label">Non, version numérique uniquement</span>
+              <span class="print-btn__sub">Fichiers HD livrés par email</span>
+            </button>
+          </div>
+          <input type="hidden" id="impression-value" name="impression" value="non">
+        </div>
+
+        <div id="print-options" style="display:none;">
+          <div style="background:var(--off-white);border:1.5px solid rgba(201,168,76,0.3);border-radius:10px;padding:20px 24px;margin-bottom:16px;">
+            <p style="font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Détails d'impression</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="support">Type de support</label>
+                <select id="support" name="support_impression">
+                  <option value="">-- Sélectionner --</option>
+                  <option value="carte_visite">Carte de visite</option>
+                  <option value="flyer_a5">Flyer A5</option>
+                  <option value="flyer_a4">Flyer A4</option>
+                  <option value="affiche_a3">Affiche A3</option>
+                  <option value="affiche_a2">Affiche A2</option>
+                  <option value="affiche_a1">Affiche A1</option>
+                  <option value="brochure">Brochure / Dépliant</option>
+                  <option value="rollup">Roll-up / Kakémono</option>
+                  <option value="packaging">Packaging / Étiquette</option>
+                  <option value="autre">Autre (préciser dans le message)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="quantite-print">Quantité</label>
+                <select id="quantite-print" name="quantite_impression">
+                  <option value="">-- Sélectionner --</option>
+                  <option value="50">50 exemplaires</option>
+                  <option value="100">100 exemplaires</option>
+                  <option value="250">250 exemplaires</option>
+                  <option value="500">500 exemplaires</option>
+                  <option value="1000">1 000 exemplaires</option>
+                  <option value="2000">2 000 exemplaires</option>
+                  <option value="5000">5 000 exemplaires</option>
+                  <option value="autre">Autre quantité</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="papier">Type de papier</label>
+                <select id="papier" name="papier_impression">
+                  <option value="">-- Sélectionner --</option>
+                  <option value="couche_brillant">Couché brillant 135g</option>
+                  <option value="couche_mat">Couché mat 135g</option>
+                  <option value="couche_epais">Couché épais 300g</option>
+                  <option value="offset">Offset blanc 90g</option>
+                  <option value="ne_sais_pas">Conseil souhaité</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="finition">Finition</label>
+                <select id="finition" name="finition_impression">
+                  <option value="">-- Sélectionner --</option>
+                  <option value="aucune">Aucune finition</option>
+                  <option value="pelliculage_brillant">Pelliculage brillant</option>
+                  <option value="pelliculage_mat">Pelliculage mat</option>
+                  <option value="vernis_uv">Vernis UV sélectif</option>
+                  <option value="dorure">Dorure à chaud</option>
+                  <option value="conseil">Conseil souhaité</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="info-impression">Informations complémentaires impression</label>
+              <textarea id="info-impression" name="info_impression" style="min-height:80px;" placeholder="Contraintes particulières, ville de livraison, imprimeur déjà choisi…"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="delai">Délai souhaité *</label>
+          <select id="delai" name="delai" required>
+            <option value="">-- Sélectionner --</option>
+            <option value="urgent">Urgent (moins de 3 jours)</option>
+            <option value="1_semaine">1 semaine</option>
+            <option value="2_semaines">2 semaines</option>
+            <option value="1_mois">1 mois</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+
+        <hr style="border:none;border-top:1px solid rgba(0,0,0,0.07);margin:8px 0 24px;">
+        <h4 style="font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--grey-dark);margin-bottom:20px;">Vos coordonnées</h4>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom complet *</label>
+            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone *</label>
+            <input type="tel" id="telephone" name="telephone" required placeholder="+212 6XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="votre@email.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Description du projet *</label>
+          <textarea id="message" name="message" required style="min-height:140px;" placeholder="Décrivez votre projet : secteur, style, couleurs, informations à inclure, format souhaité…"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--gold form-submit">Envoyer ma demande</button>
+        <p style="font-size:0.78rem;color:var(--grey-mid);text-align:center;margin-top:12px;">Réponse garantie sous 24h · Devis gratuit et sans engagement</p>
+      </form>
+      <div class="success-msg">✅ Demande envoyée ! Notre équipe vous contactera dans les 24h. Merci de votre confiance !</div>
+    </div>
+
+    <div style="margin-top:32px;text-align:center;">
+      <p style="font-size:0.9rem;color:var(--grey-mid);margin-bottom:12px;">Vous préférez un contact direct ?</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" class="wa-btn">💬 WhatsApp</a>
+        <a href="mailto:{{ site.email }}" class="btn btn--outline">📧 Email</a>
+        <a href="tel:{{ site.telephone | replace(' ', '') }}" class="btn btn--outline">📞 Appeler</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Pass services data to JS for dynamic price display #}
+<script>
+window.PULSIA_SERVICES = {{ services | json | safe }};
+</script>

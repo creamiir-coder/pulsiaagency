@@ -1,0 +1,210 @@
+---
+layout: layouts/base.njk
+title: Marketing Digital & IA pour les PME Marocaines
+description: "PULSIA Agency — Agence digitale à Casablanca. Infographie, impression, digital growth et IA pour les petites entreprises marocaines."
+---
+
+{# ── HERO ── #}
+<section class="hero">
+  <div class="hero__inner container">
+    <div class="hero__content fade-up">
+      <span class="hero__tag">{{ homepage.hero_tag }}</span>
+      <h1 class="hero__title">
+        {{ homepage.hero_titre_1 }}
+        <em>{{ homepage.hero_titre_2 }}</em>
+      </h1>
+      <p class="hero__subtitle">{{ homepage.hero_sous_titre }}</p>
+      <div class="hero__actions">
+        <a href="/commande/" class="btn btn--gold">{{ homepage.hero_btn_1 }}</a>
+        <a href="/services/" class="btn btn--outline">{{ homepage.hero_btn_2 }}</a>
+      </div>
+    </div>
+    <div class="hero__visual fade-up">
+      <div class="hero__badge-stack">
+        <div class="hero__badge">
+          <div class="hero__badge-icon">🎨</div>
+          <div class="hero__badge-text">
+            <strong>Infographie & Impression</strong>
+            <span>Logo · Charte · Supports print</span>
+          </div>
+        </div>
+        <div class="hero__badge">
+          <div class="hero__badge-icon">📈</div>
+          <div class="hero__badge-text">
+            <strong>Digital Growth</strong>
+            <span>Réseaux · Ads · Site web</span>
+          </div>
+        </div>
+        <div class="hero__badge">
+          <div class="hero__badge-icon">🤖</div>
+          <div class="hero__badge-text">
+            <strong>Intelligence Artificielle</strong>
+            <span>Création accélérée · Qualité premium</span>
+          </div>
+        </div>
+        <div class="hero__badge">
+          <div class="hero__badge-icon">🛍️</div>
+          <div class="hero__badge-text">
+            <strong>Créamiir</strong>
+            <span>Produits éducatifs · Made in Morocco</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── STATS BAR ── #}
+<div class="stats-bar">
+  <div class="stats-bar__inner container">
+    {% for stat in homepage.stats %}
+    <div class="stat fade-up">
+      <div class="stat__num">{{ stat.valeur }}</div>
+      <div class="stat__lbl">{{ stat.label }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{# ── ABOUT ── #}
+<section class="about" id="about">
+  <div class="about__inner container">
+    <div class="about__text fade-up">
+      <span class="eyebrow">À propos de {{ site.nom_agence }}</span>
+      <h2>{{ homepage.about_titre }}</h2>
+      <div class="gold-line"></div>
+      <p>{{ homepage.about_texte_1 }}</p>
+      <p>{{ homepage.about_texte_2 }}</p>
+    </div>
+    <div class="about__vals fade-up">
+      {% for val in homepage.valeurs %}
+      <div class="about__val">
+        <strong>{{ val.titre }}</strong>
+        <span>{{ val.desc }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── PÔLES D'EXPERTISE ── #}
+<section id="poles">
+  <div class="poles__inner container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Nos Pôles d'expertise</span>
+      <h2>Deux expertises, un seul objectif</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="poles__grid">
+      <div class="pole-card pole-card--info fade-up">
+        <div class="pole-card__icon">🎨</div>
+        <div class="pole-card__title">Infographie & Impression</div>
+        <p class="pole-card__desc">De la conception graphique à l'impression physique, nous créons des supports visuels impactants qui reflètent votre identité de marque.</p>
+        <div class="pole-card__tags">
+          {% for service in services.infographie | activeOnly | limit(6) %}
+          <span class="pole-tag">{{ service.titre }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="pole-card pole-card--digital fade-up">
+        <div class="pole-card__icon">📈</div>
+        <div class="pole-card__title">Digital Growth</div>
+        <p class="pole-card__desc">Présence en ligne, acquisition de clients et croissance digitale. Nous gérons votre écosystème numérique de A à Z avec des stratégies IA-driven.</p>
+        <div class="pole-card__tags">
+          {% for service in services.digital | activeOnly | limit(5) %}
+          <span class="pole-tag">{{ service.titre }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── POURQUOI PULSIA ── #}
+<section class="why">
+  <div class="why__inner container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Pourquoi nous choisir</span>
+      <h2>Ce qui nous distingue</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="why__grid">
+      <div class="why-card fade-up"><div class="why-card__icon">🤖</div><div class="why-card__title">IA intégrée</div><p class="why-card__text">Création accélérée par l'IA pour des résultats premium en temps record.</p></div>
+      <div class="why-card fade-up"><div class="why-card__icon">💰</div><div class="why-card__title">Prix accessibles</div><p class="why-card__text">Des tarifs adaptés aux budgets des PME marocaines, sans compromis sur la qualité.</p></div>
+      <div class="why-card fade-up"><div class="why-card__icon">🏆</div><div class="why-card__title">Qualité premium</div><p class="why-card__text">Chaque livrable est soigné jusqu'au dernier détail pour vous démarquer.</p></div>
+      <div class="why-card fade-up"><div class="why-card__icon">⚡</div><div class="why-card__title">Livraison rapide</div><p class="why-card__text">Délais courts grâce à nos processus optimisés et nos outils IA.</p></div>
+      <div class="why-card fade-up"><div class="why-card__icon">🇲🇦</div><div class="why-card__title">Expertise locale</div><p class="why-card__text">Connaissance approfondie du marché marocain et de ses spécificités.</p></div>
+      <div class="why-card fade-up"><div class="why-card__icon">🔄</div><div class="why-card__title">Tout-en-un</div><p class="why-card__text">Print, digital et produits sous un même toit pour une cohérence parfaite.</p></div>
+      <div class="why-card fade-up"><div class="why-card__icon">💬</div><div class="why-card__title">Suivi WhatsApp</div><p class="why-card__text">Communication directe et réactive, disponible sur WhatsApp.</p></div>
+      <div class="why-card fade-up"><div class="why-card__icon">🌱</div><div class="why-card__title">Croissance durable</div><p class="why-card__text">Des stratégies pensées pour votre croissance sur le long terme.</p></div>
+    </div>
+  </div>
+</section>
+
+{# ── CRÉAMIIR PREVIEW ── #}
+{% set produit = creamiir.produits[0] %}
+{% if produit and produit.active %}
+<section class="creamiir-section">
+  <div class="creamiir-section__inner container">
+    <div class="creamiir-section__img fade-up">
+      <img src="{{ produit.image }}" alt="{{ produit.titre }}">
+    </div>
+    <div class="creamiir-section__content fade-up">
+      <span class="eyebrow">Produits Créamiir</span>
+      <h2>{{ produit.titre }}</h2>
+      <div class="gold-line"></div>
+      <p>{{ produit.description_courte }}</p>
+      <div class="creamiir-section__price">{{ produit.prix }} DH</div>
+      <div class="creamiir-section__items">
+        {% for item in produit.contenu | limit(6) %}
+        <div class="creamiir-section__item">{{ item.icone }} {{ item.nom }}</div>
+        {% endfor %}
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+        <a href="/creamiir/" class="btn btn--gold">Découvrir le pack</a>
+        <a href="https://wa.me/{{ site.whatsapp }}?text=Je%20veux%20commander%20le%20Pack%20Creamiir" target="_blank" rel="noopener" class="btn btn--outline">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── TÉMOIGNAGES ── #}
+{% set temosFeatured = temoignages.temoignages | featuredOnly %}
+{% if temosFeatured.length > 0 %}
+<section class="temoignages-section">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Ce que disent nos clients</span>
+      <h2>Témoignages</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="temoignages-grid">
+      {% for temo in temosFeatured | limit(3) %}
+      <div class="temo-card fade-up">
+        <div class="temo-card__stars">{% for i in range(temo.note) %}⭐{% endfor %}</div>
+        <p class="temo-card__text">"{{ temo.texte }}"</p>
+        <div class="temo-card__author">
+          <strong>{{ temo.nom }}</strong>
+          <span>{{ temo.ville }}{% if temo.entreprise %} · {{ temo.entreprise }}{% endif %}</span>
+        </div>
+        <div class="temo-card__service">{{ temo.service }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── CONTACT CTA ── #}
+<section class="contact-cta">
+  <div class="contact-cta__inner container">
+    <span class="eyebrow" style="color:var(--gold-light)">Démarrez votre projet</span>
+    <h2>{{ homepage.cta_titre }}</h2>
+    <p>{{ homepage.cta_texte }}</p>
+    <div class="contact-cta__btns">
+      <a href="https://wa.me/{{ site.whatsapp }}?text=Bonjour%20PULSIA%20Agency%2C%20je%20souhaite%20un%20devis." target="_blank" rel="noopener" class="btn btn--gold">{{ homepage.cta_btn_whatsapp }}</a>
+      <a href="mailto:{{ site.email }}" class="btn btn--outline-white">{{ homepage.cta_btn_email }}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,217 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'CMS: Ajout {{collection}} "{{slug}}"'
+    update: 'CMS: Modification {{collection}} "{{slug}}"'
+    delete: 'CMS: Suppression {{collection}} "{{slug}}"'
+    uploadMedia: 'CMS: Upload image {{path}}'
+    deleteMedia: 'CMS: Suppression image {{path}}'
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+locale: fr
+
+collections:
+
+  # ══════════════════════════════════════
+  # PARAMÈTRES GÉNÉRAUX
+  # Fichier: src/_data/site.json
+  # ══════════════════════════════════════
+  - name: "parametres"
+    label: "⚙️ Paramètres du site"
+    files:
+      - label: "Informations & Contact"
+        name: "site"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Nom de l'agence", name: "nom_agence", widget: "string" }
+          - { label: "Slogan", name: "slogan", widget: "string" }
+          - { label: "Description SEO (meta)", name: "description_seo", widget: "text", hint: "150 caractères max" }
+          - { label: "Email principal", name: "email", widget: "string" }
+          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - { label: "WhatsApp (sans + ni espaces)", name: "whatsapp", widget: "string", hint: "Ex: 212613587704" }
+          - { label: "Adresse / Ville", name: "adresse", widget: "string" }
+          - { label: "Horaires", name: "horaires", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+          - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+          - { label: "TikTok URL", name: "tiktok", widget: "string", required: false }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+
+      - label: "Page d'accueil — Textes"
+        name: "homepage"
+        file: "src/_data/homepage.json"
+        fields:
+          - { label: "Tag ligne hero (petit texte doré)", name: "hero_tag", widget: "string" }
+          - { label: "Titre hero — Ligne 1", name: "hero_titre_1", widget: "string" }
+          - { label: "Titre hero — Ligne 2 (italique doré)", name: "hero_titre_2", widget: "string" }
+          - { label: "Sous-titre hero", name: "hero_sous_titre", widget: "text" }
+          - label: "Statistiques (barre noire)"
+            name: "stats"
+            widget: "list"
+            max: 4
+            fields:
+              - { label: "Valeur", name: "valeur", widget: "string", hint: "Ex: 50+" }
+              - { label: "Label", name: "label", widget: "string", hint: "Ex: Clients accompagnés" }
+          - { label: "Titre section À propos", name: "about_titre", widget: "string" }
+          - { label: "Texte À propos — Paragraphe 1", name: "about_texte_1", widget: "text" }
+          - { label: "Texte À propos — Paragraphe 2", name: "about_texte_2", widget: "text" }
+          - label: "Valeurs de l'agence (4 cartes)"
+            name: "valeurs"
+            widget: "list"
+            max: 4
+            fields:
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Description", name: "desc", widget: "string" }
+          - { label: "Titre CTA final", name: "cta_titre", widget: "string" }
+          - { label: "Texte CTA final", name: "cta_texte", widget: "text" }
+
+  # ══════════════════════════════════════
+  # SERVICES INFOGRAPHIE
+  # Fichier: src/_data/services.json (clé: infographie)
+  # ══════════════════════════════════════
+  - name: "services_infographie"
+    label: "🎨 Services — Infographie & Impression"
+    description: "Modifiez la liste des services infographie, leurs tarifs et descriptions."
+    files:
+      - label: "Tous les services Infographie"
+        name: "infographie"
+        file: "src/_data/services.json"
+        fields:
+          - label: "Services Infographie"
+            name: "infographie"
+            widget: "list"
+            label_singular: "Service"
+            fields:
+              - { label: "ID (sans accents, sans espaces)", name: "id", widget: "string", hint: "Ex: logo, carte-visite, flyer" }
+              - { label: "Titre du service", name: "titre", widget: "string" }
+              - { label: "Icône (emoji)", name: "icone", widget: "string", default: "🎨" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Prix indicatif", name: "prix", widget: "string", hint: "Ex: À partir de 800 DH ou 300 – 600 DH" }
+              - { label: "Note / délai", name: "note_prix", widget: "string", hint: "Ex: Livraison 3–5 jours" }
+              - label: "Options / Formules"
+                name: "options"
+                widget: "list"
+                field: { label: "Option", name: "option", widget: "string" }
+              - { label: "Service actif", name: "active", widget: "boolean", default: true }
+              - { label: "Mis en avant", name: "featured", widget: "boolean", default: false }
+          - label: "Services Digital Growth"
+            name: "digital"
+            widget: "list"
+            label_singular: "Service"
+            fields:
+              - { label: "ID (sans accents, sans espaces)", name: "id", widget: "string" }
+              - { label: "Titre du service", name: "titre", widget: "string" }
+              - { label: "Icône (emoji)", name: "icone", widget: "string", default: "📈" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Prix indicatif", name: "prix", widget: "string" }
+              - { label: "Note / délai", name: "note_prix", widget: "string" }
+              - label: "Options / Formules"
+                name: "options"
+                widget: "list"
+                field: { label: "Option", name: "option", widget: "string" }
+              - { label: "Service actif", name: "active", widget: "boolean", default: true }
+              - { label: "Mis en avant", name: "featured", widget: "boolean", default: false }
+
+  # ══════════════════════════════════════
+  # PRODUITS CRÉAMIIR
+  # Fichier: src/_data/creamiir.json
+  # ══════════════════════════════════════
+  - name: "creamiir"
+    label: "📦 Produits Créamiir"
+    files:
+      - label: "Produits Créamiir"
+        name: "creamiir"
+        file: "src/_data/creamiir.json"
+        fields:
+          - label: "Produits"
+            name: "produits"
+            widget: "list"
+            label_singular: "Produit"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Nom du produit", name: "titre", widget: "string" }
+              - { label: "Sous-titre", name: "sous_titre", widget: "string" }
+              - { label: "Prix (DH)", name: "prix", widget: "number", value_type: "int" }
+              - { label: "En stock", name: "en_stock", widget: "boolean", default: true }
+              - { label: "Image principale", name: "image", widget: "image" }
+              - { label: "Description courte", name: "description_courte", widget: "text" }
+              - { label: "Description complète", name: "description_longue", widget: "text" }
+              - label: "Contenu du pack"
+                name: "contenu"
+                widget: "list"
+                fields:
+                  - { label: "Icône", name: "icone", widget: "string", default: "📦" }
+                  - { label: "Nom de l'élément", name: "nom", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "string" }
+              - label: "Bénéfices"
+                name: "benefices"
+                widget: "list"
+                fields:
+                  - { label: "Icône", name: "icone", widget: "string", default: "🌱" }
+                  - { label: "Titre", name: "titre", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "string" }
+              - label: "Témoignages"
+                name: "temoignages"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Nom", name: "nom", widget: "string" }
+                  - { label: "Ville", name: "ville", widget: "string" }
+                  - { label: "Témoignage", name: "texte", widget: "text" }
+                  - { label: "Note (1–5)", name: "note", widget: "number", default: 5, min: 1, max: 5 }
+              - { label: "Produit actif", name: "active", widget: "boolean", default: true }
+
+  # ══════════════════════════════════════
+  # TÉMOIGNAGES
+  # Fichier: src/_data/temoignages.json
+  # ══════════════════════════════════════
+  - name: "temoignages"
+    label: "💬 Témoignages clients"
+    files:
+      - label: "Témoignages"
+        name: "temoignages"
+        file: "src/_data/temoignages.json"
+        fields:
+          - label: "Témoignages"
+            name: "temoignages"
+            widget: "list"
+            label_singular: "Témoignage"
+            fields:
+              - { label: "Nom", name: "nom", widget: "string" }
+              - { label: "Ville", name: "ville", widget: "string" }
+              - { label: "Entreprise", name: "entreprise", widget: "string", required: false }
+              - { label: "Service utilisé", name: "service", widget: "string" }
+              - { label: "Témoignage", name: "texte", widget: "text" }
+              - { label: "Note (1–5)", name: "note", widget: "number", default: 5, min: 1, max: 5 }
+              - { label: "Afficher sur l'accueil", name: "featured", widget: "boolean", default: true }
+              - { label: "Actif", name: "active", widget: "boolean", default: true }
+
+  # ══════════════════════════════════════
+  # FAQ
+  # Fichier: src/_data/faq.json
+  # ══════════════════════════════════════
+  - name: "faq"
+    label: "❓ FAQ — Questions fréquentes"
+    files:
+      - label: "FAQ"
+        name: "faq"
+        file: "src/_data/faq.json"
+        fields:
+          - label: "Questions"
+            name: "questions"
+            widget: "list"
+            label_singular: "Question"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Réponse", name: "reponse", widget: "text" }
+              - label: "Catégorie"
+                name: "categorie"
+                widget: "select"
+                options:
+                  - { label: "Général", value: "general" }
+                  - { label: "Services & Tarifs", value: "services" }
+                  - { label: "Commandes & Délais", value: "commandes" }
+                  - { label: "Créamiir", value: "creamiir" }
+                  - { label: "Paiement", value: "paiement" }
+              - { label: "Actif", name: "active", widget: "boolean", default: true }

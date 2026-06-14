@@ -1,0 +1,120 @@
+---
+layout: layouts/base.njk
+title: Services & Tarifs
+description: "Découvrez tous les services PULSIA Agency : infographie, impression, digital growth, community management, Meta Ads, sites web. Tarifs transparents."
+permalink: /services/
+---
+
+<div class="page-header">
+  <div class="page-header__inner container">
+    <span class="eyebrow">Ce que nous faisons</span>
+    <h1>Services & Tarifs</h1>
+    <p>Tarifs transparents, livraison rapide, qualité premium. Choisissez votre service et démarrez votre projet.</p>
+  </div>
+</div>
+
+<section class="services-page">
+  <div class="container">
+
+    {# ── TABS ── #}
+    <div class="tabs-nav">
+      <button class="tab-btn active" data-tab="tab-infographie">🎨 Infographie & Impression</button>
+      <button class="tab-btn" data-tab="tab-digital">📈 Digital Growth</button>
+    </div>
+
+    {# ── INFOGRAPHIE ── #}
+    <div class="tab-panel" id="tab-infographie">
+      <div class="services-intro fade-up">
+        <h2>Pôle Infographie & Impression</h2>
+        <p>Création graphique professionnelle pour tous vos supports print et digitaux. Les frais d'impression sont toujours à la charge du client.</p>
+      </div>
+      <div class="services-grid" id="infographie">
+        {% for service in services.infographie | activeOnly %}
+        <div class="service-card fade-up">
+          <div class="service-card__icon">{{ service.icone }}</div>
+          <h3 class="service-card__title">{{ service.titre }}</h3>
+          <p class="service-card__desc">{{ service.description }}</p>
+          <div class="service-card__price">{{ service.prix }}</div>
+          <div class="service-card__note">{{ service.note_prix }}</div>
+          {% if service.options and service.options.length > 0 %}
+          <div class="service-card__options">
+            {% for opt in service.options %}
+            <span class="service-tag">{{ opt }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <a href="/commande/?service={{ service.id }}" class="btn btn--gold service-card__btn">Commander</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {# ── DIGITAL ── #}
+    <div class="tab-panel" id="tab-digital" style="display:none">
+      <div class="services-intro fade-up">
+        <h2>Pôle Digital Growth</h2>
+        <p>Stratégies digitales IA-driven pour développer votre présence en ligne et acquérir de nouveaux clients. Les budgets publicitaires sont toujours payés directement par le client aux plateformes.</p>
+      </div>
+      <div class="services-grid" id="digital">
+        {% for service in services.digital | activeOnly %}
+        <div class="service-card fade-up">
+          <div class="service-card__icon">{{ service.icone }}</div>
+          <h3 class="service-card__title">{{ service.titre }}</h3>
+          <p class="service-card__desc">{{ service.description }}</p>
+          <div class="service-card__price">{{ service.prix }}</div>
+          <div class="service-card__note">{{ service.note_prix }}</div>
+          {% if service.options and service.options.length > 0 %}
+          <div class="service-card__options">
+            {% for opt in service.options %}
+            <span class="service-tag">{{ opt }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <a href="/commande/?service={{ service.id }}" class="btn btn--gold service-card__btn">Commander</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ── FAQ ── #}
+{% set faqServices = [] %}
+{% for q in faq.questions | activeOnly %}
+  {% if q.categorie == "services" or q.categorie == "commandes" %}
+    {% set faqServices = (faqServices.push(q), faqServices) %}
+  {% endif %}
+{% endfor %}
+
+{% if faqServices.length > 0 %}
+<section class="faq-section" style="background:var(--off-white)">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>FAQ Services</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="faq-list">
+      {% for q in faqServices %}
+      <div class="faq-item fade-up">
+        <div class="faq-question">{{ q.question }}</div>
+        <div class="faq-answer">{{ q.reponse }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="contact-cta">
+  <div class="contact-cta__inner container">
+    <span class="eyebrow" style="color:var(--gold-light)">Un projet en tête ?</span>
+    <h2>Demandez votre devis gratuit</h2>
+    <p>Réponse garantie sous 24h · Sans engagement</p>
+    <div class="contact-cta__btns">
+      <a href="/commande/" class="btn btn--gold">Formulaire de commande</a>
+      <a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" class="btn btn--outline-white">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>

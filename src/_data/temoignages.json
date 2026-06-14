@@ -1,0 +1,34 @@
+{
+  "temoignages": [
+    {
+      "nom": "Ahmed B.",
+      "ville": "Casablanca",
+      "entreprise": "Boulangerie El Amal",
+      "service": "Logo & Identité Visuelle",
+      "texte": "PULSIA a transformé l'image de ma boulangerie. Le logo est magnifique et mes clients le remarquent. Service professionnel, livraison rapide.",
+      "note": 5,
+      "featured": true,
+      "active": true
+    },
+    {
+      "nom": "Sara M.",
+      "ville": "Rabat",
+      "entreprise": "Boutique Zine",
+      "service": "Community Management",
+      "texte": "En 3 mois, nos abonnés Instagram ont triplé et nos ventes en ligne ont augmenté de 60%. L'équipe PULSIA comprend vraiment le marché marocain.",
+      "note": 5,
+      "featured": true,
+      "active": true
+    },
+    {
+      "nom": "Youssef K.",
+      "ville": "Marrakech",
+      "entreprise": "Riad Atlas",
+      "service": "Site Web + Meta Ads",
+      "texte": "Notre site vitrine et les campagnes publicitaires ont généré plus de réservations en 2 mois qu'en toute l'année précédente.",
+      "note": 5,
+      "featured": true,
+      "active": true
+    }
+  ]
+}

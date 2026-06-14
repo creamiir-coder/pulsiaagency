@@ -1,0 +1,128 @@
+---
+layout: layouts/base.njk
+title: Contact
+description: "Contactez PULSIA Agency — Casablanca. Email, téléphone, WhatsApp. Réponse garantie sous 24h."
+permalink: /contact/
+---
+
+<div class="page-header">
+  <div class="page-header__inner container">
+    <span class="eyebrow">Parlons de votre projet</span>
+    <h1>Contactez-nous</h1>
+    <p>Réponse garantie sous 24h. Devis gratuit et sans engagement.</p>
+  </div>
+</div>
+
+<section style="padding:80px 0;">
+  <div class="contact-page-grid container">
+
+    <div class="contact-sidebar fade-up">
+      <h2 style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:24px;">{{ site.nom_agence }}</h2>
+
+      <div class="contact-info-item">
+        <div class="contact-info-icon">✉️</div>
+        <div>
+          <strong>Email</strong>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">📞</div>
+        <div>
+          <strong>Téléphone</strong>
+          <a href="tel:{{ site.telephone | replace(' ', '') }}">{{ site.telephone }}</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">💬</div>
+        <div>
+          <strong>WhatsApp</strong>
+          <a href="https://wa.me/{{ site.whatsapp }}?text=Bonjour%20PULSIA%20Agency" target="_blank" rel="noopener">+{{ site.whatsapp }}</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">📍</div>
+        <div>
+          <strong>Localisation</strong>
+          <span>{{ site.adresse }}</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">🕐</div>
+        <div>
+          <strong>Horaires</strong>
+          <span>{{ site.horaires }}</span>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;">
+        <a href="https://wa.me/{{ site.whatsapp }}?text=Bonjour%20PULSIA%20Agency%2C%20je%20souhaite%20en%20savoir%20plus" target="_blank" rel="noopener" class="wa-btn" style="display:block;text-align:center;margin-bottom:12px;">💬 Écrire sur WhatsApp</a>
+        <a href="/commande/" class="btn btn--outline" style="display:block;text-align:center;">📋 Formulaire de commande</a>
+      </div>
+    </div>
+
+    <div class="form-card fade-up">
+      <h3 style="font-family:var(--font-display);font-size:1.6rem;margin-bottom:20px;">Envoyer un message</h3>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><input name="bot-field"></p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ct-nom">Nom complet *</label>
+            <input type="text" id="ct-nom" name="nom" required placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="ct-email">Email *</label>
+            <input type="email" id="ct-email" name="email" required placeholder="votre@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ct-sujet">Sujet *</label>
+          <select id="ct-sujet" name="sujet" required>
+            <option value="">-- Choisissez un sujet --</option>
+            <option value="devis">Demande de devis</option>
+            <option value="infographie">Service Infographie</option>
+            <option value="digital">Service Digital Growth</option>
+            <option value="creamiir">Produit Créamiir</option>
+            <option value="partenariat">Partenariat</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ct-message">Message *</label>
+          <textarea id="ct-message" name="message" required style="min-height:160px;" placeholder="Décrivez votre projet ou votre demande…"></textarea>
+        </div>
+        <button type="submit" class="btn btn--gold form-submit">Envoyer le message</button>
+      </form>
+      <div class="success-msg">✅ Message envoyé ! Nous vous répondrons dans les 24h. Merci !</div>
+    </div>
+  </div>
+</section>
+
+{# FAQ générale #}
+{% set faqGenerale = [] %}
+{% for q in faq.questions | activeOnly %}
+  {% if q.categorie == "general" or q.categorie == "paiement" %}
+    {% set faqGenerale = (faqGenerale.push(q), faqGenerale) %}
+  {% endif %}
+{% endfor %}
+
+{% if faqGenerale.length > 0 %}
+<section class="faq-section" style="background:var(--off-white)">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>FAQ</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="faq-list">
+      {% for q in faqGenerale %}
+      <div class="faq-item fade-up">
+        <div class="faq-question">{{ q.question }}</div>
+        <div class="faq-answer">{{ q.reponse }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

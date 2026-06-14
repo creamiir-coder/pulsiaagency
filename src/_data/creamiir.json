@@ -1,0 +1,37 @@
+{
+  "produits": [
+    {
+      "id": "pack-ramadan",
+      "titre": "Pack رحلتي في رمضان",
+      "sous_titre": "Kit éducatif pour enfants — Ramadan",
+      "prix": 250,
+      "en_stock": true,
+      "image": "/images/creamiir-pack.png",
+      "description_courte": "Un kit complet pour accompagner vos enfants durant le mois sacré du Ramadan, alliant créativité, spiritualité et apprentissage.",
+      "description_longue": "Le Pack رحلتي في رمضان est un kit éducatif soigneusement conçu pour rendre le mois du Ramadan magique et instructif pour les enfants de 4 à 12 ans. Chaque élément a été pensé pour stimuler la créativité, renforcer la connexion spirituelle et créer des souvenirs familiaux précieux.",
+      "contenu": [
+        { "icone": "📖", "nom": "Carnet de Ramadan personnalisé", "desc": "Suivi quotidien, prayers tracker, objectifs du mois" },
+        { "icone": "🗓️", "nom": "Calendrier illustré des 30 jours", "desc": "Une illustration originale par jour avec activités" },
+        { "icone": "🎨", "nom": "Cahier de coloriages thématiques", "desc": "12 illustrations : mosquées, croissant, lanterne" },
+        { "icone": "🌙", "nom": "Jeu de cartes éducatives", "desc": "Les 5 piliers de l'Islam, vocabulaire arabe illustré" },
+        { "icone": "✏️", "nom": "Fiches d'activités créatives", "desc": "Exercices, histoires à compléter, puzzles" },
+        { "icone": "🤲", "nom": "Affiche Mes bonnes actions", "desc": "Tracker visuel hebdomadaire à accrocher" },
+        { "icone": "🎁", "nom": "Carte cadeau personnalisée", "desc": "Avec message islamique illustré" }
+      ],
+      "benefices": [
+        { "icone": "🌱", "titre": "Éveil spirituel", "desc": "Introduction douce aux valeurs islamiques" },
+        { "icone": "🎨", "titre": "Créativité", "desc": "Activités manuelles pour stimuler l'imagination" },
+        { "icone": "👨‍👩‍👧", "titre": "Lien familial", "desc": "Moments de partage entre parents et enfants" },
+        { "icone": "📚", "titre": "Apprentissage ludique", "desc": "Vocabulaire arabe et histoire islamique par le jeu" },
+        { "icone": "⭐", "titre": "Suivi des progrès", "desc": "Le tracker encourage la régularité" },
+        { "icone": "🇲🇦", "titre": "Made in Morocco", "desc": "Conçu avec amour à Casablanca" }
+      ],
+      "temoignages": [
+        { "nom": "Fatima", "ville": "Casablanca", "texte": "Mes enfants ont adoré ! Le carnet de Ramadan a rendu ce mois encore plus spécial.", "note": 5 },
+        { "nom": "Karim", "ville": "Rabat", "texte": "Excellent rapport qualité-prix. Les visuels sont beaux et les activités adaptées.", "note": 5 },
+        { "nom": "Samira", "ville": "Marrakech", "texte": "Le jeu de cartes est devenu notre activité du soir pendant tout le Ramadan. Merci !", "note": 5 }
+      ],
+      "active": true
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question": "Quels sont vos délais de livraison ?",
+      "reponse": "Nos délais varient selon le service : Logo (3–5 jours), Flyer/Carte de visite (1–3 jours), Site web vitrine (2–3 semaines), Community management (démarrage sous 5 jours). Pour les urgences, contactez-nous directement sur WhatsApp.",
+      "categorie": "commandes",
+      "active": true
+    },
+    {
+      "question": "L'impression est-elle incluse dans vos tarifs ?",
+      "reponse": "Non. Nos tarifs couvrent uniquement la création graphique. Les frais d'impression sont à la charge du client. Nous vous fournissons des fichiers HD prêts pour l'impression chez n'importe quel imprimeur.",
+      "categorie": "services",
+      "active": true
+    },
+    {
+      "question": "Comment passer une commande ?",
+      "reponse": "Via notre formulaire en ligne sur la page Commander, ou directement par WhatsApp au +212 6 13 58 77 04. Nous répondons généralement sous 24h.",
+      "categorie": "commandes",
+      "active": true
+    },
+    {
+      "question": "Quels modes de paiement acceptez-vous ?",
+      "reponse": "Nous acceptons le virement bancaire, le paiement en espèces (Casablanca) et le paiement à la livraison pour les produits Créamiir. Un acompte de 50% est demandé pour les projets supérieurs à 1 000 DH.",
+      "categorie": "paiement",
+      "active": true
+    },
+    {
+      "question": "Proposez-vous des forfaits mensuels ?",
+      "reponse": "Oui, pour les services récurrents (Community Management, Meta Ads, SEO, Email Marketing). Ces forfaits mensuels offrent un tarif préférentiel et un suivi prioritaire.",
+      "categorie": "services",
+      "active": true
+    },
+    {
+      "question": "Le Pack Créamiir est-il disponible toute l'année ?",
+      "reponse": "Le Pack Ramadan est une édition saisonnière disponible avant et pendant le Ramadan. D'autres produits Créamiir sont en cours de développement. Abonnez-vous à notre newsletter pour être informée des nouvelles sorties.",
+      "categorie": "creamiir",
+      "active": true
+    }
+  ]
+}

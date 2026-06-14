@@ -1,0 +1,237 @@
+{
+  "infographie": [
+    {
+      "id": "logo",
+      "titre": "Logo & Identité de marque",
+      "icone": "🖌️",
+      "description": "Création de logos professionnels reflétant l'identité unique de votre entreprise. Du logo simple à la charte graphique complète.",
+      "prix": "À partir de 800 DH",
+      "note_prix": "Livraison 3–5 jours",
+      "options": ["Logo Simple", "Logo + Charte Graphique", "Pack Identité Complète"],
+      "active": true,
+      "featured": true
+    },
+    {
+      "id": "identite",
+      "titre": "Identité Visuelle & Charte",
+      "icone": "🎨",
+      "description": "Charte graphique complète : couleurs, typographies, logo, déclinaisons, guide d'utilisation.",
+      "prix": "1 500 – 3 500 DH",
+      "note_prix": "Charte graphique incluse",
+      "options": ["Logo + Charte", "Pack Business", "Pack Premium"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "carte",
+      "titre": "Carte de Visite",
+      "icone": "💳",
+      "description": "Design professionnel recto/verso, prêt pour l'impression chez votre imprimeur.",
+      "prix": "300 – 600 DH",
+      "note_prix": "Frais d'impression à la charge du client",
+      "options": ["Standard 85×55mm", "Personnalisée", "Luxe avec Vernis"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "flyer",
+      "titre": "Flyer & Tract",
+      "icone": "📄",
+      "description": "Flyers accrocheurs pour vos événements, promotions et communications.",
+      "prix": "200 – 450 DH",
+      "note_prix": "Format A5 ou A4",
+      "options": ["A5 Recto", "A5 Recto-Verso", "A4 Recto-Verso"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "brochure",
+      "titre": "Brochure & Dépliant",
+      "icone": "📖",
+      "description": "Brochures multi-pages pour présenter votre entreprise, vos produits ou services.",
+      "prix": "500 – 1 200 DH",
+      "note_prix": "À partir de 4 pages",
+      "options": ["4 pages", "8 pages", "12+ pages"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "affiche",
+      "titre": "Affiche Grand Format",
+      "icone": "🖼️",
+      "description": "Affiches impactantes pour vos événements, promotions et espaces commerciaux.",
+      "prix": "300 – 700 DH",
+      "note_prix": "Formats A2, A1, A0",
+      "options": ["A2", "A1", "A0", "Personnalisé"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "rollup",
+      "titre": "Roll-up / Kakémono",
+      "icone": "🎪",
+      "description": "Supports de communication autonomes pour salons, événements et points de vente.",
+      "prix": "400 – 800 DH",
+      "note_prix": "Impression non incluse",
+      "options": ["85×200cm", "100×200cm", "Personnalisé"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "menu",
+      "titre": "Menu Restaurant",
+      "icone": "🍽️",
+      "description": "Menus élégants et fonctionnels pour restaurants, cafés et hôtels.",
+      "prix": "600 – 1 500 DH",
+      "note_prix": "À partir de 4 pages",
+      "options": ["4 pages", "8 pages", "Carte A4"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "packaging",
+      "titre": "Packaging & Étiquettes",
+      "icone": "📦",
+      "description": "Packaging produit et étiquettes qui valorisent votre marque en rayon.",
+      "prix": "500 – 2 000 DH",
+      "note_prix": "Selon complexité",
+      "options": ["Étiquette Simple", "Boîte", "Pack Complet"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "catalogue",
+      "titre": "Catalogue / PDF Commercial",
+      "icone": "📋",
+      "description": "Catalogues produits et présentations commerciales professionnels.",
+      "prix": "800 – 2 500 DH",
+      "note_prix": "Version imprimable et digitale",
+      "options": ["12–20 pages", "20–40 pages", "40+ pages"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "visuels-rs",
+      "titre": "Visuels Réseaux Sociaux",
+      "icone": "📱",
+      "description": "Templates et visuels sur mesure pour Instagram, Facebook, LinkedIn.",
+      "prix": "150 – 400 DH",
+      "note_prix": "Par visuel ou pack mensuel",
+      "options": ["Post unique", "Pack 4 posts", "Pack 12 posts"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "presentation",
+      "titre": "Présentation PowerPoint",
+      "icone": "🖥️",
+      "description": "Présentations professionnelles et pitch decks pour convaincre vos clients.",
+      "prix": "500 – 1 200 DH",
+      "note_prix": "PowerPoint ou Google Slides",
+      "options": ["10 slides", "20 slides", "30+ slides"],
+      "active": true,
+      "featured": false
+    }
+  ],
+  "digital": [
+    {
+      "id": "community",
+      "titre": "Community Management",
+      "icone": "📱",
+      "description": "Gestion complète de vos réseaux sociaux : stratégie, création de contenu, animation de communauté.",
+      "prix": "800 – 2 500 DH/mois",
+      "note_prix": "Budget publicitaire non inclus",
+      "options": ["Pack Starter (1 réseau)", "Pack Business (2 réseaux)", "Pack Premium (3+ réseaux)"],
+      "active": true,
+      "featured": true
+    },
+    {
+      "id": "metaads",
+      "titre": "Meta Ads (Facebook & Instagram)",
+      "icone": "🎯",
+      "description": "Campagnes publicitaires ciblées sur Facebook et Instagram pour générer des leads et des ventes.",
+      "prix": "600 – 1 500 DH/mois",
+      "note_prix": "Budget pub payé par le client à Meta",
+      "options": ["Création campagne", "Gestion mensuelle", "Pack Complet"],
+      "active": true,
+      "featured": true
+    },
+    {
+      "id": "contenu",
+      "titre": "Création de Contenu",
+      "icone": "🎬",
+      "description": "Photos, vidéos, Reels et TikToks professionnels pour alimenter vos réseaux.",
+      "prix": "800 – 2 000 DH/mois",
+      "note_prix": "Selon le volume et la fréquence",
+      "options": ["Pack 8 posts", "Pack 16 posts", "Pack 30 posts"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "site-vitrine",
+      "titre": "Site Web Vitrine",
+      "icone": "🌐",
+      "description": "Sites web professionnels, modernes et optimisés SEO. Responsive mobile garanti.",
+      "prix": "2 500 – 6 000 DH",
+      "note_prix": "Livraison 2–3 semaines",
+      "options": ["Landing Page", "Site Vitrine (5 pages)", "Site Complet (10+ pages)"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "ecommerce",
+      "titre": "Site E-commerce",
+      "icone": "🛒",
+      "description": "Boutiques en ligne complètes sur Shopify ou WooCommerce, prêtes à vendre.",
+      "prix": "4 000 – 12 000 DH",
+      "note_prix": "Livraison 4–6 semaines",
+      "options": ["Boutique Simple", "Boutique Avancée", "Pack Complet"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "seo",
+      "titre": "SEO — Référencement naturel",
+      "icone": "🔍",
+      "description": "Optimisation pour les moteurs de recherche. Plus de visibilité, plus de clients organiques.",
+      "prix": "500 – 1 200 DH/mois",
+      "note_prix": "Résultats visibles à 3–6 mois",
+      "options": ["Audit SEO", "SEO On-page", "SEO Complet + Backlinks"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "email-marketing",
+      "titre": "Email Marketing",
+      "icone": "📧",
+      "description": "Campagnes email personnalisées pour fidéliser vos clients et générer des ventes.",
+      "prix": "400 – 900 DH/mois",
+      "note_prix": "Selon fréquence d'envoi",
+      "options": ["Newsletter mensuelle", "Séquence automatisée", "Pack Complet"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "audit",
+      "titre": "Audit Digital",
+      "icone": "📊",
+      "description": "Analyse complète de votre présence digitale avec recommandations prioritaires.",
+      "prix": "1 500 – 3 000 DH",
+      "note_prix": "Rapport détaillé livré en 5 jours",
+      "options": ["Audit Réseaux", "Audit Site Web", "Audit 360°"],
+      "active": true,
+      "featured": false
+    },
+    {
+      "id": "strategie-ia",
+      "titre": "Stratégie IA & Automatisation",
+      "icone": "🤖",
+      "description": "Intégration de l'IA dans votre marketing : génération de contenu, chatbots, automatisations.",
+      "prix": "Sur devis",
+      "note_prix": "Selon complexité du projet",
+      "options": ["Consultation IA", "Automatisation Marketing", "Pack IA Complet"],
+      "active": true,
+      "featured": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "hero_tag": "Casablanca, Maroc · Marketing Digital & IA",
+  "hero_titre_1": "Marketing Digital",
+  "hero_titre_2": "à votre portée",
+  "hero_sous_titre": "PULSIA Agency utilise l'Intelligence Artificielle pour rendre le marketing digital accessible et efficace aux petites entreprises marocaines. Design, digital, impression — tout sous un seul toit.",
+  "hero_btn_1": "Démarrer un projet",
+  "hero_btn_2": "Voir nos services",
+  "stats": [
+    { "valeur": "50+", "label": "Clients accompagnés" },
+    { "valeur": "300+", "label": "Projets livrés" },
+    { "valeur": "3 ans", "label": "D'expérience" },
+    { "valeur": "98%", "label": "Clients satisfaits" }
+  ],
+  "about_titre": "L'IA au service des PME marocaines",
+  "about_texte_1": "PULSIA Agency est une agence digitale basée à Casablanca, spécialisée dans le marketing digital et l'infographie pour les petites et moyennes entreprises marocaines.",
+  "about_texte_2": "Nous croyons que chaque entreprise mérite un marketing de qualité, quelle que soit sa taille. En exploitant la puissance de l'IA, nous livrons des créations premium à des tarifs accessibles.",
+  "valeurs": [
+    { "titre": "Accessibilité", "desc": "Marketing premium à prix juste" },
+    { "titre": "IA & Innovation", "desc": "Technologies de pointe au service de votre croissance" },
+    { "titre": "Local", "desc": "Expertise du marché marocain" },
+    { "titre": "Polyvalence", "desc": "Print, digital, produits — tout sous un toit" }
+  ],
+  "cta_titre": "Prêt à travailler ensemble ?",
+  "cta_texte": "Contactez-nous pour un devis gratuit. Réponse garantie sous 24h.",
+  "cta_btn_whatsapp": "💬 WhatsApp",
+  "cta_btn_email": "✉ Envoyer un email"
+}

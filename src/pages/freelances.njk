@@ -1,0 +1,142 @@
+---
+layout: layouts/base.njk
+title: Rejoindre l'équipe Freelance
+description: "PULSIA Agency recrute des freelances au Maroc : graphistes, community managers, monteurs vidéo, développeurs web. Candidatez maintenant."
+permalink: /freelances/
+---
+
+<div class="page-header">
+  <div class="page-header__inner container">
+    <span class="eyebrow">Nous recrutons</span>
+    <h1>Rejoindre l'équipe</h1>
+    <p>PULSIA Agency collabore avec des freelances talentueux au Maroc. Envoyez votre candidature.</p>
+  </div>
+</div>
+
+<section style="padding:80px 0;">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow">Profils recherchés</span>
+      <h2>Qui nous cherchons</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="profiles-grid">
+      <div class="profile-card fade-up">
+        <div class="profile-card__icon">🎨</div>
+        <h3>Graphiste & Designer</h3>
+        <p>Maîtrise d'Adobe (Illustrator, Photoshop, InDesign) ou Canva Pro. Sens du design et de l'identité visuelle.</p>
+        <div class="profile-card__skills">
+          <span class="skill-tag">Illustrator</span>
+          <span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">Canva Pro</span>
+          <span class="skill-tag">InDesign</span>
+        </div>
+      </div>
+      <div class="profile-card fade-up">
+        <div class="profile-card__icon">📱</div>
+        <h3>Community Manager</h3>
+        <p>Expérience en gestion de réseaux sociaux, rédaction de contenus bilingues (FR/AR) et création de visuels.</p>
+        <div class="profile-card__skills">
+          <span class="skill-tag">Instagram</span>
+          <span class="skill-tag">Facebook</span>
+          <span class="skill-tag">TikTok</span>
+          <span class="skill-tag">Copywriting</span>
+        </div>
+      </div>
+      <div class="profile-card fade-up">
+        <div class="profile-card__icon">🎬</div>
+        <h3>Monteur Vidéo</h3>
+        <p>Montage vidéo pour Reels, TikTok et publicités. Maîtrise de Premiere Pro, CapCut ou DaVinci Resolve.</p>
+        <div class="profile-card__skills">
+          <span class="skill-tag">Premiere Pro</span>
+          <span class="skill-tag">CapCut</span>
+          <span class="skill-tag">DaVinci Resolve</span>
+          <span class="skill-tag">After Effects</span>
+        </div>
+      </div>
+      <div class="profile-card fade-up">
+        <div class="profile-card__icon">💻</div>
+        <h3>Développeur Web</h3>
+        <p>Création de sites web vitrine et e-commerce. Maîtrise de HTML/CSS/JS, WordPress ou Shopify.</p>
+        <div class="profile-card__skills">
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Shopify</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--off-white);padding:80px 0;">
+  <div class="container" style="max-width:680px;">
+    <div class="section-head fade-up" style="margin-bottom:36px;">
+      <span class="eyebrow">Postuler</span>
+      <h2>Votre candidature</h2>
+      <div class="gold-line"></div>
+      <p>Toutes les candidatures sont étudiées avec attention. Réponse sous 48h.</p>
+    </div>
+    <div class="form-card fade-up">
+      <form name="candidature-freelance" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="candidature-freelance">
+        <p style="display:none"><input name="bot-field"></p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-nom">Nom complet *</label>
+            <input type="text" id="f-nom" name="nom" required placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="f-tel">Téléphone *</label>
+            <input type="tel" id="f-tel" name="telephone" required placeholder="+212 6XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-email">Email *</label>
+            <input type="email" id="f-email" name="email" required placeholder="votre@email.com">
+          </div>
+          <div class="form-group">
+            <label for="f-ville">Ville *</label>
+            <input type="text" id="f-ville" name="ville" required placeholder="Casablanca">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="f-profil">Profil / Spécialité *</label>
+          <select id="f-profil" name="profil" required>
+            <option value="">-- Sélectionnez votre profil --</option>
+            <option value="graphiste">Graphiste & Designer</option>
+            <option value="community_manager">Community Manager</option>
+            <option value="monteur_video">Monteur Vidéo</option>
+            <option value="developpeur_web">Développeur Web</option>
+            <option value="autre">Autre (préciser dans la lettre)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-experience">Niveau d'expérience</label>
+          <select id="f-experience" name="experience">
+            <option value="junior">Junior (moins de 2 ans)</option>
+            <option value="intermediaire">Intermédiaire (2–4 ans)</option>
+            <option value="senior">Confirmé (4+ ans)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-cv">CV (PDF obligatoire) *</label>
+          <input type="file" id="f-cv" name="cv" accept=".pdf,.doc,.docx" required style="padding:10px 16px;border:1.5px dashed rgba(0,0,0,0.15);background:var(--off-white);cursor:pointer;border-radius:6px;width:100%;">
+          <span style="font-size:0.75rem;color:var(--grey-mid);display:block;margin-top:4px;">PDF, DOC ou DOCX — max 5 Mo</span>
+        </div>
+        <div class="form-group">
+          <label for="f-portfolio">Portfolio / Lien (facultatif)</label>
+          <input type="url" id="f-portfolio" name="portfolio" placeholder="https://votreportfolio.com · Behance · LinkedIn · Drive…">
+        </div>
+        <div class="form-group">
+          <label for="f-lettre">Lettre de motivation *</label>
+          <textarea id="f-lettre" name="lettre_motivation" required style="min-height:160px;" placeholder="Parlez-nous de vous, vos motivations à rejoindre PULSIA Agency, et votre intérêt pour les outils IA…"></textarea>
+        </div>
+        <button type="submit" class="btn btn--gold form-submit">Envoyer ma candidature</button>
+        <p style="font-size:0.78rem;color:var(--grey-mid);text-align:center;margin-top:12px;">Toutes les candidatures sont étudiées · Réponse sous 48h</p>
+      </form>
+      <div class="success-msg">🎉 Candidature reçue ! Nous étudions votre profil et vous contacterons dans les 48h. Merci !</div>
+    </div>
+  </div>
+</section>
